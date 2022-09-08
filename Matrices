@@ -419,4 +419,84 @@ int main()
 	return 0;
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Matrix in snake pattern:
+void printSnake(int mat[R][C])
+{
+	for(int i = 0; i < R; i++)
+	{
+		if(i % 2 == 0)
+		{
+			for(int j = 0; j < C; j++)
+				cout << mat[i][j] << " ";
+		}
+		else
+		{
+			for(int j = C - 1; j >= 0; j--)
+				cout << mat[i][j] << " ";
+		}
+
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transpose of matrix:
+void transpose(int mat[n][n])
+{
+    for(int i = 0; i < n; i++)
+		for(int j = i + 1; j < n; j++)
+			swap(mat[i][j], mat[j][i]);
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Boundary tracersal of the matrix:\
+void bTraversal(int mat[R][C])
+{
+	if(R == 1)
+	{
+		for(int i = 0; i < C; i++)
+			cout << mat[0][i] << " ";
+	}
+	else if(C == 1)
+	{
+		for(int i = 0; i < R; i++)
+			cout << mat[i][0] << " ";
+	}
+	else
+	{
+		for(int i = 0; i < C; i++)
+			cout << mat[0][i] << " ";
+		for(int i = 1; i < R; i++)
+			cout << mat[i][C - 1] << " ";
+		for(int i = C - 2; i >= 0; i--)
+			cout << mat[R - 1][i] << " ";
+		for(int i = R - 2; i >= 1; i--)
+			cout << mat[i][0] << " ";
+	}
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rotate matrix by 90 degrees:
+First transpoe the matrix and reverse the rows of the matrix to get the result:
+
+void transpose(int mat[n][n])
+{
+    for(int i = 0; i < n; i++)
+		for(int j = i + 1; j < n; j++)
+			swap(mat[i][j], mat[j][i]);
+			
+	for(int i = 0; i < n; i++)
+	{
+	    int low = 0, high = n - 1;
+	    
+	    while(low < high)
+	    {
+	        swap(mat[low][i], mat[high][i]);
+	        
+	        low++;
+	        high--;
+	    }
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 

@@ -4,7 +4,6 @@
 #include <climits>
 using namespace std;
 
-
 int main()
 {
 	int arr[3][2] = {{10, 20},

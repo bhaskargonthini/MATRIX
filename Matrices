@@ -574,6 +574,25 @@ void interchangeRows(vector<vector<int> > &matrix)
         swap(matrix[i],matrix[r--]);
         
     }
+  -------------------------------------------------------------------------------------------------------------------------------------------------------
+  SEARCH IN ROW-WISE COLUMN-WISE SORTED MATRIX:
+  
+  bool search(vector<vector<int> > matrix, int n, int m, int x) 
+    {
+        // code here 
+        int i = 0, j = m-1;
+        while(i<n and j>=0){
+            if(matrix[i][j] == x)
+            return true;
+            else if(matrix[i][j]>x)
+            j--;
+            else i++;
+        }
+        return false;
+        
+    }
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
 
 

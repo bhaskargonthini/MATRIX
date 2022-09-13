@@ -532,7 +532,48 @@ void printSpiral(int mat[4][4], int R, int C)
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+REVERSING COLUMNS OF A MATRIX:
+THE FIRST COLUMN BECOMES LAST COLUMNA DNTHE LAST COLUMN BECOMES THE FIRST COLUMN AND VICE VERSA TO ALL THE COLUMNS
 
+void reverseCol(vector<vector<int> > &matrix)
+    {
+        // code here
+        for(int i=0;i<matrix.size();i++){
+            int low = 0, high = matrix[0].size()-1;
+        while (low<=high){
+        	swap(matrix[i][low], matrix[i][high]);
+            low++;
+            high--;
+        }
+            }
+            //cout<<endl;
+        }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INTERCHANGING THE ROWS OF A MATRIX:
+
+void interchangeRows(vector<vector<int> > &matrix)
+    {
+        // code here 
+        int r = matrix.size()-1;
+        for(int i=0;i<matrix.size()/2;i++){
+            for(int j=0;j<matrix[0].size();j++){
+                swap(matrix[i][j],matrix[r][j]);
+            }
+            r--;
+        }
+        //swap(matrix[i],matrix[r--]);
+        
+    }
+    
+   ANOTHER OPTIMIZED SOLUTION:
+   void interchangeRows(vector<vector<int> > &matrix)
+    {
+        // code here 
+        int r = matrix.size()-1;
+        for(int i=0;i<matrix.size()/2;i++)
+        swap(matrix[i],matrix[r--]);
+        
+    }
 
 
 
